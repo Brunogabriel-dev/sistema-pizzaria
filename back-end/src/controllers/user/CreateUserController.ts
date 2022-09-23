@@ -2,8 +2,9 @@ import {Request, response, Response} from 'express'
 
 class CreateUserController{
   async handle(req: Request, res: Response){
-    return res.json({ ok:true })
+    console.log(req.body)
 
+    return res.json({ ok:true })
   }
 }
 
