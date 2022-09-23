@@ -45,6 +45,7 @@ model Product{
 
   @@map("products")
   category_id String
+  items Item[]
 }
 
 model Order{
@@ -69,7 +70,9 @@ model Item{
   update_at DateTime? @default(now())
 
   order Order @relation(fields: [order_id], references: [id])
+  product Product @relation(fields: [product_id], references: [id])
 
   @@map("items")
   order_id String
+  product_id String
 }
