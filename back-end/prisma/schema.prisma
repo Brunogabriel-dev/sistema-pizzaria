@@ -46,3 +46,10 @@ model Product{
   @@map("products")
   category_id String
 }
+
+model Ordem{
+  id String @id @default(uuid())
+  table Int
+  status Boolean @default(false)
+  draft Boolean @default(true)
+}
