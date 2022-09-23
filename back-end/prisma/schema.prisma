@@ -58,9 +58,18 @@ model Order{
   update_at DateTime? @default(now())
 
   @@map("orders")
+  items Item[]
   }
 
 model Item{
   id String @id @default(uuid())
   amount Int
-}  
+
+  created_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  order Order @relation(fields: [order_id], references: [id])
+
+  @@map("items")
+  order_id String
+}
