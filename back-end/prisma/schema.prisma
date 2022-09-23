@@ -47,9 +47,20 @@ model Product{
   category_id String
 }
 
-model Ordem{
+model Order{
   id String @id @default(uuid())
   table Int
   status Boolean @default(false)
   draft Boolean @default(true)
-}
+  name String?
+
+  created_at DateTime? @default(now())
+  update_at DateTime? @default(now())
+
+  @@map("orders")
+  }
+
+model Item{
+  id String @id @default(uuid())
+  amount Int
+}  
