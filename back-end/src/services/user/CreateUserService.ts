@@ -7,7 +7,10 @@ interface UserRequest{
 
 class CreateUserService{
   async execute({name, email, password}: UserRequest){
-    return { ok: true }
+
+    console.log(name);
+
+    return { name: name }
   }
 }
 
