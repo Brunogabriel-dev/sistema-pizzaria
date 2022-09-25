@@ -1,3 +1,4 @@
+import prismaClient from '../../prisma'
 
 interface UserRequest{
   name: string;
@@ -8,7 +9,10 @@ interface UserRequest{
 class CreateUserService{
   async execute({name, email, password}: UserRequest){
 
-    console.log(name);
+    // verificar se ele enviou um email
+    if(!email){
+      throw new Error("Email incorrect")
+    }
 
     return { name: name }
   }
