@@ -21,7 +21,24 @@ class CreateUserService{
       }
     })
 
-    return { name: name }
+    if(userAlreadyExists){
+      throw new Error("User already exists")
+    }
+
+    const user = await prismaClient.user.create({
+      data:{
+        name: name,
+        email: email,
+        password: password,
+      },
+      select:{
+        id: true,
+        name: true,
+        email: true,
+      }
+    })
+
+    return user;
   }
 }
 
