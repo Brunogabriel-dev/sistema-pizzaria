@@ -1,5 +1,6 @@
 
 import prismaClient from "../../prisma";
+import { compare } from 'bcryptjs'
 
 interface AuthRequest{
   email: string;
@@ -15,9 +16,13 @@ class AuthUserService{
         email: email
       }
     })
+
     if(!user){
       throw new Error("User/password incorrect")
     }
+
+    // preciso verificar se a senha que ele mandou está correta.
+    const passwordMatch = await compare(password, user.password)
 
 
 
