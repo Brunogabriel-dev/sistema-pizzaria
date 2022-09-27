@@ -6,9 +6,12 @@ interface AuthRequest{
   password: string;
 }
 
-class AuthUserService{
-  async execute(){
 
+class AuthUserService{
+  async execute({ email, password }: AuthRequest){
+    console.log(email);
+
+    return { ok: true }
   }
 }
 
