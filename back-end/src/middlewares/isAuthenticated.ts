@@ -1,15 +1,17 @@
 import {NextFunction, Request, Response} from "express"
 import { verify } from 'jsonwebtoken'
 
+interface Payload{
+  sub: string;
+}
+
 export function isAuthenticated(
   req: Request,
   res: Response,
   next: NextFunction
 ){
 
-  console.log("CHAMOU ESSE MIDDLEWARE")
-
-  return next();
-
+  // Receber o token
+  const authToken = req.headers.authorization;
 }
 
