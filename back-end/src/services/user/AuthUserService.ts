@@ -30,7 +30,14 @@ class AuthUserService{
     }
 
 
-    // gerar um token JWT e devolver os dados do usuario como id, name e email
+    // Se deu tudo certo vamos gerar o token pro usuario.
+    const token = sign(
+      {
+        name: user.name,
+        email: user.email
+      },
+      '123123'
+    )
 
 
     return { ok: true }
