@@ -13,5 +13,9 @@ export function isAuthenticated(
 
   // Receber o token
   const authToken = req.headers.authorization;
+
+  if(!authToken){
+    return res.status(401).end();
+  }
 }
 
