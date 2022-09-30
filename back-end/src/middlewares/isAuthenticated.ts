@@ -20,14 +20,19 @@ export function isAuthenticated(
 
   const [, token] = authToken.split(" ")
   
+
   try{
     //Validar esse token.
+    const { sub } = verify(
+      token,
+      process.env.JWT_SECRET
+    ) as Payload;
 
+    return next();
 
  }catch(err){
   return res.status(401).end();
  }
-
 
 
 
