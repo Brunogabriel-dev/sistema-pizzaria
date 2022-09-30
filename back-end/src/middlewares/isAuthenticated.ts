@@ -17,5 +17,18 @@ export function isAuthenticated(
   if(!authToken){
     return res.status(401).end();
   }
-}
 
+  const [, token] = authToken.split(" ")
+  
+  try{
+    //Validar esse token.
+
+
+ }catch(err){
+  return res.status(401).end();
+ }
+
+
+
+
+}
