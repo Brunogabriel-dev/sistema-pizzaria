@@ -18,6 +18,6 @@ router.post('/session', new AuthUserController().handle)
 router.get('/me', isAuthenticated, new DetailuserController().handle)
 
 //-- ROTAS CATEGORY
-router.post('/category', isAuthenticated)
+router.post('/category', isAuthenticated, new CreateCategoryController().handle)
 
 export { router };
