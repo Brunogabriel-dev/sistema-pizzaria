@@ -4,6 +4,8 @@ import { CreateUserController } from './controllers/user/CreateUserController'
 import { AuthUserController } from './controllers/user/AuthUserController'
 import { DetailuserController } from './controllers/user/DetailUserController'
 
+import { CreateCategoryController } from './controllers/category/CreateCategoryController'
+
 import { isAuthenticated } from './middlewares/isAuthenticated'
 
 const router = Router();
