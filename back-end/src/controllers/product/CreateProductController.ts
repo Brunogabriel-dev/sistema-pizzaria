@@ -10,7 +10,7 @@ class CreateProductController{
 
     const createProductService = new CreateProductService();
 
-    const product = createProductService.execute({
+    const product = await createProductService.execute({
       name,
       price,
       description,
