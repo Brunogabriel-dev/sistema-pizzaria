@@ -1,5 +1,9 @@
 import prismaClient from "../../prisma";
 
-class ListaCategoryService{
-  
+class ListCategoryService{
+  async execute(){
+
+  }
 }
+
+export { ListCategoryService }
