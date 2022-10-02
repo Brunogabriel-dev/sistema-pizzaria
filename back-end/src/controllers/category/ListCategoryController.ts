@@ -6,6 +6,9 @@ class ListCategoryController{
     const listCategoryService = new ListCategoryService();
 
     const category = await listCategoryService.execute();
+
+    return res.json(category);
+    
   }
 }
 
