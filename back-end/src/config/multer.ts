@@ -7,7 +7,7 @@ export default{
   upload(folder: string){
     return{
       storage: multer.diskStorage({
-        
+        destination: resolve()
       })
     }
   }
