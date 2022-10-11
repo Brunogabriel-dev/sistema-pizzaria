@@ -7,13 +7,13 @@ interface ProductRequest{
 class ListByCategoryService{
   async execute({ category_id }: ProductRequest){
 
-    const FindByCategory = await prismaClient.product.findMany({
+    const findByCategory = await prismaClient.product.findMany({
       where:{
         category_id: category_id
       }
     })
 
-    return FindByCategory;
+    return findByCategory;
 
   }
 }
