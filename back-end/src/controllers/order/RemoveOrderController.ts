@@ -11,6 +11,8 @@ class RemoveOrderController{
       order_id
     });
 
+    return res.json(order);
+
   }
 }
 
