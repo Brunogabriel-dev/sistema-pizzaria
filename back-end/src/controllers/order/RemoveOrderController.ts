@@ -7,6 +7,10 @@ class RemoveOrderController{
 
     const removeOrder = new RemoveOrderService();
 
+    const order = removeOrder.execute({
+      order_id
+    });
+
   }
 }
 
